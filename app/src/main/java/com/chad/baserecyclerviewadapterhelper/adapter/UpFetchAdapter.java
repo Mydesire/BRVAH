@@ -38,6 +38,9 @@ public class UpFetchAdapter extends BaseQuickAdapter<Movie, BaseViewHolder> impl
         }
     }
 
+    // kotlin 新特新, 目前再java 中并不支持, 修复方法
+    // https://github.com/CymChad/BaseRecyclerViewAdapterHelper/issues/3557
+    // https://github.com/CymChad/BaseRecyclerViewAdapterHelper/issues/3555
     @NotNull
     @Override
     public BaseUpFetchModule addUpFetchModule(@NotNull BaseQuickAdapter<?, ?> baseQuickAdapter) {

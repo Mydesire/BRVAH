@@ -63,6 +63,9 @@ public class LoadMoreAdapter extends BaseQuickAdapter<Status, BaseViewHolder> im
         }
     };
 
+    // kotlin 新特新, 目前再java 中并不支持, 修复方法
+    // https://github.com/CymChad/BaseRecyclerViewAdapterHelper/issues/3557
+    // https://github.com/CymChad/BaseRecyclerViewAdapterHelper/issues/3555
     @NotNull
     @Override
     public BaseLoadMoreModule addLoadMoreModule(@NotNull BaseQuickAdapter<?, ?> baseQuickAdapter) {
