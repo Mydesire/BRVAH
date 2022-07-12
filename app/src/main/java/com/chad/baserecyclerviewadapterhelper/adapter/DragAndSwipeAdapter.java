@@ -2,6 +2,7 @@ package com.chad.baserecyclerviewadapterhelper.adapter;
 
 import com.chad.baserecyclerviewadapterhelper.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.module.BaseDraggableModule;
 import com.chad.library.adapter.base.module.DraggableModule;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
@@ -31,5 +32,11 @@ public class DragAndSwipeAdapter extends BaseQuickAdapter<String, BaseViewHolder
                 break;
         }
         helper.setText(R.id.tv, item);
+    }
+
+    @NotNull
+    @Override
+    public BaseDraggableModule addDraggableModule(@NotNull BaseQuickAdapter<?, ?> baseQuickAdapter) {
+        return new BaseDraggableModule(baseQuickAdapter);
     }
 }
