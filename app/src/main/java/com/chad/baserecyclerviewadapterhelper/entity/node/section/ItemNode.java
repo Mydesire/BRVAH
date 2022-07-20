@@ -1,18 +1,22 @@
 package com.chad.baserecyclerviewadapterhelper.entity.node.section;
 
-import androidx.annotation.DrawableRes;
 import com.chad.library.adapter.base.entity.node.BaseNode;
+
 import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
+
+import androidx.annotation.DrawableRes;
 
 public class ItemNode extends BaseNode {
 
-    private int img;
     private String name;
+    private int img;
+    private List<String> list;
 
-    public ItemNode(@DrawableRes int img, String name) {
-        this.img = img;
+    public ItemNode(String name, List<String> list) {
         this.name = name;
+        this.list = list;
     }
 
     @DrawableRes
@@ -30,6 +34,14 @@ public class ItemNode extends BaseNode {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<String> getList(){
+        return list;
+    }
+
+    public void setList(List<String> list){
+        this.list = list;
     }
 
     @Nullable

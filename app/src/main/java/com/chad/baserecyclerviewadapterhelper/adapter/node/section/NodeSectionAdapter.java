@@ -1,10 +1,8 @@
 package com.chad.baserecyclerviewadapterhelper.adapter.node.section;
 
-import com.chad.baserecyclerviewadapterhelper.adapter.node.section.provider.RootFooterNodeProvider;
 import com.chad.baserecyclerviewadapterhelper.adapter.node.section.provider.RootNodeProvider;
 import com.chad.baserecyclerviewadapterhelper.adapter.node.section.provider.SecondNodeProvider;
 import com.chad.baserecyclerviewadapterhelper.entity.node.section.ItemNode;
-import com.chad.baserecyclerviewadapterhelper.entity.node.section.RootFooterNode;
 import com.chad.baserecyclerviewadapterhelper.entity.node.section.RootNode;
 import com.chad.library.adapter.base.BaseNodeAdapter;
 import com.chad.library.adapter.base.entity.node.BaseNode;
@@ -19,7 +17,7 @@ public class NodeSectionAdapter extends BaseNodeAdapter {
         super();
         addFullSpanNodeProvider(new RootNodeProvider());
         addNodeProvider(new SecondNodeProvider());
-        addFooterNodeProvider(new RootFooterNodeProvider());
+//        addFooterNodeProvider(new RootFooterNodeProvider());
     }
 
     @Override
@@ -29,9 +27,10 @@ public class NodeSectionAdapter extends BaseNodeAdapter {
             return 0;
         } else if (node instanceof ItemNode) {
             return 1;
-        } else if (node instanceof RootFooterNode) {
-            return 2;
         }
+//        else if (node instanceof RootFooterNode) {
+//            return 2;
+//        }
         return -1;
     }
 }

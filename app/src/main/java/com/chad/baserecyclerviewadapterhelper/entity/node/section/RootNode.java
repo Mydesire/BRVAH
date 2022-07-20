@@ -2,18 +2,19 @@ package com.chad.baserecyclerviewadapterhelper.entity.node.section;
 
 import com.chad.library.adapter.base.entity.node.BaseExpandNode;
 import com.chad.library.adapter.base.entity.node.BaseNode;
-import com.chad.library.adapter.base.entity.node.NodeFooterImp;
+
 import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
-public class RootNode extends BaseExpandNode implements NodeFooterImp {
+public class RootNode extends BaseExpandNode {
 
     private List<BaseNode> childNode;
     private String title;
 
-    public RootNode(List<BaseNode> childNode, String title) {
-        this.childNode = childNode;
+    public RootNode(String title, List<BaseNode> childNode) {
         this.title = title;
+        this.childNode = childNode;
     }
 
     public String getTitle() {
@@ -31,15 +32,15 @@ public class RootNode extends BaseExpandNode implements NodeFooterImp {
         return childNode;
     }
 
-    /**
-     * {@link NodeFooterImp}
-     * （可选实现）
-     * 重写此方法，获取脚部节点
-     * @return
-     */
-    @Nullable
-    @Override
-    public BaseNode getFooterNode() {
-        return new RootFooterNode("显示更多...");
-    }
+//    /**
+//     * {@link NodeFooterImp}
+//     * （可选实现）
+//     * 重写此方法，获取脚部节点
+//     * @return
+//     */
+//    @Nullable
+//    @Override
+//    public BaseNode getFooterNode() {
+//        return new RootFooterNode("显示更多...");
+//    }
 }
