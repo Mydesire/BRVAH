@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+ * 节点 收缩
  */
 public class NodeSectionUseActivity extends BaseActivity {
     private RecyclerView mRecyclerView;
