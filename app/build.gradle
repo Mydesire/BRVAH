@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.chad.baserecyclerviewadapterhelper"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 32
         versionCode 9
         versionName "3.0"

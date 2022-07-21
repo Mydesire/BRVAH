@@ -33,7 +33,7 @@ public class NodeSectionUseActivity extends BaseActivity {
         setTitle("Node Use (Section)");
 
         mRecyclerView = findViewById(R.id.rv_list);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 //        mRecyclerView.addItemDecoration(new GridSectionAverageGapItemDecoration(10, 10, 20, 15));
 
         final NodeSectionAdapter nodeAdapter = new NodeSectionAdapter();
@@ -56,13 +56,13 @@ public class NodeSectionUseActivity extends BaseActivity {
         for (int i = 0; i < 8; i++) {
             final float rInt = r.nextFloat();
             List<String> rateList = new ArrayList<>();
-            for(int j = 0; j < 5; j++){
+            for(int j = 0; j < 6; j++){
                 rateList.add(rInt + "." + j);
             }
 
             //Item Node
             List<BaseNode> nodeContentList = new ArrayList<>();
-            ItemNode itemEntity1 = new ItemNode("Root " + i + " - SecondNode 0", rateList);
+            ItemNode itemEntity1 = new ItemNode("RootA " + i, "RootB " + i, rateList);
 //            ItemNode itemEntity2 = new ItemNode("Root " + i + " - SecondNode 1", rateList);
 //            ItemNode itemEntity3 = new ItemNode("Root " + i + " - SecondNode 2", rateList);
 //            ItemNode itemEntity4 = new ItemNode("Root " + i + " - SecondNode 3", rateList);

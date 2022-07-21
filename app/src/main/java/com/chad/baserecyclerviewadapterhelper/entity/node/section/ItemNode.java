@@ -10,12 +10,14 @@ import androidx.annotation.DrawableRes;
 
 public class ItemNode extends BaseNode {
 
-    private String name;
+    private String teamA;
+    private String teamB;
     private int img;
     private List<String> list;
 
-    public ItemNode(String name, List<String> list) {
-        this.name = name;
+    public ItemNode(String teamA, String teamB, List<String> list) {
+        this.teamA = teamA;
+        this.teamB = teamB;
         this.list = list;
     }
 
@@ -28,12 +30,16 @@ public class ItemNode extends BaseNode {
         this.img = img;
     }
 
-    public String getName() {
-        return name;
+    public String getTeamA() {
+        return teamA;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getTeamB() {
+        return teamB;
+    }
+
+    public void setTeamA(String teamA) {
+        this.teamA = teamA;
     }
 
     public List<String> getList(){

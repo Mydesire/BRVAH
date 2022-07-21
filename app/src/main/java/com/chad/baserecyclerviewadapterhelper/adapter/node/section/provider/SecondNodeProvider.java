@@ -1,6 +1,5 @@
 package com.chad.baserecyclerviewadapterhelper.adapter.node.section.provider;
 
-import android.graphics.Color;
 import android.view.View;
 
 import com.chad.baserecyclerviewadapterhelper.R;
@@ -34,14 +33,15 @@ public class SecondNodeProvider extends BaseNodeProvider {
         if (data == null) return;
 
         ItemNode entity = (ItemNode) data;
-        helper.setText(R.id.tv, entity.getName());
+        helper.setText(R.id.tv_team_a, entity.getTeamA());
+        helper.setText(R.id.tv_team_b, entity.getTeamB());
 
         final RecyclerView rv = helper.getView(R.id.rv);
         final GridLayoutManager glMgr = new GridLayoutManager(rv.getContext(), 2);
         rv.setLayoutManager(glMgr);
-        rv.setAdapter(new BaseQuickAdapter<String, BaseViewHolder>(android.R.layout.simple_list_item_1, entity.getList()){
+        rv.setAdapter(new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_score, entity.getList()){
             @Override protected void convert(@NonNull BaseViewHolder holder, String item){
-                holder.setText(android.R.id.text1, item).setTextColor(android.R.id.text1, Color.BLACK);
+                holder.setText(R.id.tv_left, item).setText(R.id.tv_score, item);
             }
         });
     }
