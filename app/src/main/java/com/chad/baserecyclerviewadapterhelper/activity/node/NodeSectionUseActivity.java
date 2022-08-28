@@ -54,14 +54,13 @@ public class NodeSectionUseActivity extends BaseActivity {
 
         final Random r = new Random(1);
         for (int i = 0; i < 8; i++) {
+
             final float rInt = r.nextFloat();
             List<String> rateList = new ArrayList<>();
             for(int j = 0; j < 6; j++){
                 rateList.add(rInt + "." + j);
             }
-
-            //Item Node
-            List<BaseNode> nodeContentList = new ArrayList<>();
+            List<BaseNode> nodeContentList = new ArrayList<>(); //Item Node
             ItemNode itemEntity1 = new ItemNode("RootA " + i, "RootB " + i, rateList);
 //            ItemNode itemEntity2 = new ItemNode("Root " + i + " - SecondNode 1", rateList);
 //            ItemNode itemEntity3 = new ItemNode("Root " + i + " - SecondNode 2", rateList);
@@ -74,12 +73,12 @@ public class NodeSectionUseActivity extends BaseActivity {
 //            nodeContentList.add(itemEntity5);
 
             // Root Node
-            RootNode entity = new RootNode("Root Node " + i, nodeContentList);
+            RootNode rootNode = new RootNode("Root Node " + i, nodeContentList);
 
             // 第1号数据默认不展开
-            if (i != 0) entity.setExpanded(false);
+            if (i != 0) rootNode.setExpanded(false);
 
-            list.add(entity);
+            list.add(rootNode);
         }
         return list;
     }

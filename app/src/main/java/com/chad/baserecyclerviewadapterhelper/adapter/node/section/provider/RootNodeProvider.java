@@ -31,6 +31,9 @@ public class RootNodeProvider extends BaseNodeProvider {
 
     @Override
     public void onClick(@NotNull BaseViewHolder helper, @NotNull View view, BaseNode data, int position) {
-        getAdapter().expandOrCollapse(position);
+        // 全量更新, 点击 导致 convert 方法再次被调用,
+//        getAdapter().expandOrCollapse(position);
+        // 这里使用payload进行增量刷新（避免单个item刷新导致列表闪烁）
+        getAdapter().expandOrCollapse(position, true, true, data);
     }
 }

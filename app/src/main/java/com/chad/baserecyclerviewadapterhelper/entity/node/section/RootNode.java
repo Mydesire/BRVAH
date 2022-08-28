@@ -7,7 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class RootNode extends BaseExpandNode {
+public class RootNode extends BaseExpandNode
+        /* implements NodeFooterImp */{
 
     private List<BaseNode> childNode;
     private String title;
@@ -26,9 +27,7 @@ public class RootNode extends BaseExpandNode {
      * 重写此方法，获取子节点。如果没有子节点，返回 null 或者 空数组
      * @return child nodes
      */
-    @Nullable
-    @Override
-    public List<BaseNode> getChildNode() {
+    @Nullable @Override public List<BaseNode> getChildNode() {
         return childNode;
     }
 
@@ -38,9 +37,7 @@ public class RootNode extends BaseExpandNode {
 //     * 重写此方法，获取脚部节点
 //     * @return
 //     */
-//    @Nullable
-//    @Override
-//    public BaseNode getFooterNode() {
+//    @Nullable @Override public BaseNode getFooterNode() {
 //        return new RootFooterNode("显示更多...");
 //    }
 }

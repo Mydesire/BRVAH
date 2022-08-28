@@ -32,14 +32,14 @@ public class SecondNodeProvider extends BaseNodeProvider {
     public void convert(@NotNull BaseViewHolder helper, @Nullable BaseNode data) {
         if (data == null) return;
 
-        ItemNode entity = (ItemNode) data;
-        helper.setText(R.id.tv_team_a, entity.getTeamA());
-        helper.setText(R.id.tv_team_b, entity.getTeamB());
+        ItemNode node = (ItemNode) data;
+        helper.setText(R.id.tv_team_a, node.getTeamA());
+        helper.setText(R.id.tv_team_b, node.getTeamB());
 
         final RecyclerView rv = helper.getView(R.id.rv);
         final GridLayoutManager glMgr = new GridLayoutManager(rv.getContext(), 2);
         rv.setLayoutManager(glMgr);
-        rv.setAdapter(new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_score, entity.getList()){
+        rv.setAdapter(new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_score, node.getList()){
             @Override protected void convert(@NonNull BaseViewHolder holder, String item){
                 holder.setText(R.id.tv_left, item).setText(R.id.tv_score, item);
             }
