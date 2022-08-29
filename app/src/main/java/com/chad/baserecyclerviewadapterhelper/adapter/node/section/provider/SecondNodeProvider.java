@@ -25,7 +25,7 @@ public class SecondNodeProvider extends BaseNodeProvider {
 
     @Override
     public int getLayoutId() {
-        return R.layout.item_section_content;
+        return R.layout.item_section_content_node;
     }
 
     @Override
